@@ -1,0 +1,41 @@
+<%= form_with(model: file_uploader, local: true) do |form| %>
+  <% if file_uploader.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(file_uploader.errors.count, "error") %> prohibited this file_uploader from being saved:</h2>
+
+      <ul>
+        <% file_uploader.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <form>
+  <div class="form-group">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+   <%= form.label :upload_image %>
+   <%= form.file_field :file_data, class: 'form-control' %>
+ </div>
+ <br/>
+
+ <div class="form-group">
+   <%= form.label :share %>
+    <%= form.check_box :share%>
+ </div>
+ <br/>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+</form>
+<% end %>
