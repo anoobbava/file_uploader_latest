@@ -47,6 +47,7 @@ end
 
 group :production do
   gem 'unicorn', '~> 6.1'
+  gem 'faker'
 end
 
 group :development do
